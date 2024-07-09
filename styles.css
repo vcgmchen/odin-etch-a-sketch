@@ -1,0 +1,11 @@
+#container {
+    display: flex;
+    border: 1px pink solid;
+    width: fit-content;
+}
+
+#container > div > div {
+    border: 1px pink solid;
+    height: 32px;
+    width: 32px;
+}
