@@ -9,3 +9,8 @@
     height: 32px;
     width: 32px;
 }
+
+/* CSS class to fill color on hovered square */
+.colored {
+    background-color: grey;
+}
