@@ -39,6 +39,7 @@ Q: should I make multiple commits for each progressive improvement on the hover 
 - [X] Take notes on git commit philosophies
 - [ ] Plan out commit(s) for current step (step 3)  
 - [X] see if need to put code in a function, or not / leave as global in script 
+- [X] see if need to put code in a function, or not / leave as global in script 
 - [X] Make commit 
 - [X] Move on to step 4 (button)
 
