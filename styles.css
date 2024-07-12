@@ -1,13 +1,18 @@
 #container {
     display: flex;
     border: 1px pink solid;
-    width: fit-content;
+    /* Set total size of grid */
+    height: 960px;
+    width: 960px;
 }
 
-#container > div > div {
-    border: 1px pink solid;
-    height: 32px;
-    width: 32px;
+#container>div>div {
+    /* Custom properties */
+    --square-height: calc(960px / 16);
+    --square-width: calc(960px / 16);
+
+    height: var(--square-height, 60px); /* Include fallback value */
+    width: var(--square-width, 60px);   /* Include fallback value */
 }
 
 /* CSS class to fill color on hovered square */

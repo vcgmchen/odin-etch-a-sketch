@@ -25,6 +25,23 @@ function createGrid(size) {
         }
     }
 
+    // Set div height and width as a function of size 
+    // Select all div squares
+    const squares = document.querySelectorAll("#container > div > div");
+    // Calculate square size
+    let GRID = 960;
+    let squareSize = GRID / size;
+    // Apply height and width to every square
+    squares.forEach((square) => {
+        square.style.setProperty("--square-height", squareSize+"px");   // +"px": units are necessary for CSS
+        square.style.setProperty("--square-width", squareSize+"px");
+    })
+
+    // does it need to be iteratively? Can I apply CSS rules to an entire nodeList?      
+    // Doesn't work. Because it's dynamic, need to iterate over the nodeList. Otherwise could toggle CSS class.
+    // squares.style.setProperty("--square-height", squareSize + "px");   // +"px": units are necessary for CSS
+    // squares.style.setProperty("--square-width", squareSize + "px");
+
     // Apply hover effect once grid is set up
     applyHover();
 }
