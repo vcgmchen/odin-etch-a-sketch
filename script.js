@@ -31,7 +31,7 @@ function createGrid(size) {
 
 // Function to make each grid square respond to mouse hover
 function applyHover() {
-    
+
     // Select all squares of the grid
     const squares = document.querySelectorAll("#container > div > div");
 
@@ -48,6 +48,20 @@ function applyHover() {
 
 }
 
+// Function to remove existing grid 
+function clearGrid() {
+
+    // Select the parent node
+    const container = document.querySelector("#container");
+    // Select the child nodes 
+    const rows = document.querySelectorAll("#container > div");
+
+    // Iteratively remove each child node
+    for (let i = 0; i < rows.length; i++) {
+        container.removeChild(rows[i]);
+    }
+
+}
 
 // Select button element
 const button = document.querySelector("button");
@@ -58,6 +72,9 @@ const handleClick = function () {
     // Get size from user via window prompt
     let size = prompt("Enter a number (1-100)");
 
+    // Remove the existing grid
+    clearGrid();
+
     // Create new grid with user-given size 
     createGrid(size);
 
@@ -65,3 +82,4 @@ const handleClick = function () {
 
 // Event listener for click event 
 button.addEventListener("click", handleClick);
+
