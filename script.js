@@ -70,13 +70,19 @@ const button = document.querySelector("button");
 const handleClick = function () {
 
     // Get size from user via window prompt
-    let size = prompt("Enter a number (1-100)");
+    let size = prompt("Set grid size (1-100)");
 
-    // Remove the existing grid
-    clearGrid();
-
-    // Create new grid with user-given size 
-    createGrid(size);
+    // Validate user input
+    if (size > 100) {
+        alert("Error: maximum size 100");
+    } else if (size < 1) {
+        alert("Error: size must be positive");
+    } else {
+        // Remove the existing grid
+        clearGrid();
+        // Create new grid with user-given size 
+        createGrid(size);
+    }
 
 }
 
