@@ -25,21 +25,43 @@ function createGrid(size) {
         }
     }
 
+    // Apply hover effect once grid is set up
+    applyHover();
+}
+
+// Function to make each grid square respond to mouse hover
+function applyHover() {
+    
+    // Select all squares of the grid
+    const squares = document.querySelectorAll("#container > div > div");
+
+    // Helper function that applies CSS class to a given square 
+    const handleMouseover = function () {
+        // `this` references the event's target element - i.e. the square 
+        this.classList.add("colored");
+    }
+
+    // Iterate over the nodeList of squares to add event listener for hover
+    squares.forEach((square) => {
+        square.addEventListener("mouseover", handleMouseover);
+    })
+
 }
 
 
-// Select all squares of the grid
-const squares = document.querySelectorAll("#container > div > div");
+// Select button element
+const button = document.querySelector("button");
 
-// Helper function that applies CSS class to a given square 
-const handleMouseover = function () {
-    // `this` references the event's target element - i.e. the square 
-    this.classList.add("colored");
+// Add callback function to take in a number from 1-100; store the user input number into a variable
+const handleClick = function () {
+
+    // Get size from user via window prompt
+    let size = prompt("Enter a number (1-100)");
+
+    // Create new grid with user-given size 
+    createGrid(size);
+
 }
 
-// Iterate over the nodeList of squares to add event listener for hover
-squares.forEach((square) => {
-    square.addEventListener("mouseover", handleMouseover);
-})
-
-
+// Event listener for click event 
+button.addEventListener("click", handleClick);

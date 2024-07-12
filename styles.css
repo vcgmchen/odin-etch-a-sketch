@@ -14,3 +14,8 @@
 .colored {
     background-color: grey;
 }
+
+button {
+    margin: 20px;
+    padding: 10px;
+}
